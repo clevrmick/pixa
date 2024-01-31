@@ -1,10 +1,13 @@
 import React from "react";
 
 export default function SearchBar({ onSubmit }) {
-  const handleClick = () => {
-    onsubmit("cars");
-  };
+  //   const handleClick = () => {
+  //     onSubmit("cars");
+  //   };
   return (
-    <input type="search" placeholder="Search Images" onClick={handleClick} />
+    <div className="search">
+      <input type="search" placeholder="Search Images" />
+      <button onClick={() => onSubmit("Mansion")}>click</button>
+    </div>
   );
 }
