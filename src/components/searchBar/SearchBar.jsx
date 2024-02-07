@@ -1,13 +1,27 @@
 import React from "react";
 
 export default function SearchBar({ onSubmit }) {
-  //   const handleClick = () => {
-  //     onSubmit("cars");
-  //   };
+  const [terms, setTerms] = React.useState("");
+
+  const handleFormSubmit = (event) => {
+    event.preventDefault();
+
+    onSubmit(terms);
+  };
+
+  const handleChange = (event) => {
+    setTerms(event.target.value);
+  };
   return (
     <div className="search">
-      <input type="search" placeholder="Search Images" />
-      <button onClick={() => onSubmit("Mansion")}>click</button>
+      <form onSubmit={handleFormSubmit}>
+        <input
+          value={terms}
+          type="search"
+          placeholder="Search Images"
+          onChange={handleChange}
+        />
+      </form>
     </div>
   );
 }
