@@ -12,7 +12,9 @@ export default function App() {
   };
   return (
     <div>
-      <h1>Welcome</h1>
+      <h1 style={{ textAlign: "center", textTransform: "capitalize" }}>
+        Welcome to UnsplashX
+      </h1>
       <SearchBar onSubmit={onSubmit} />
       <ImageList images={images} />
     </div>
