@@ -1,5 +1,5 @@
 import React from "react";
-
+import "./searchBar.css";
 export default function SearchBar({ onSubmit }) {
   const [terms, setTerms] = React.useState("");
 
@@ -13,8 +13,9 @@ export default function SearchBar({ onSubmit }) {
     setTerms(event.target.value);
   };
   return (
-    <div className="search">
+    <div className="search-bar">
       <form onSubmit={handleFormSubmit}>
+        <label>Enter search term</label>
         <input
           value={terms}
           type="search"
